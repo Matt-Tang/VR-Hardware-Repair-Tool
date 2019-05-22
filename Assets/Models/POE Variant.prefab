@@ -28,7 +28,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
 --- !u!114 &1369575523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41,7 +41,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffefbea063cab884ca33e5a449e5c22c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentFlags: 44
+  attachmentFlags: 84
   attachmentOffset: {fileID: 0}
   catchingSpeedThreshold: -1
   releaseVelocityStyle: 1
@@ -258,7 +258,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 765dade36c4226a4d9278baa2befddfe,
         type: 3}
       propertyPath: m_Name
-      value: POE Variant
+      value: POE
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 765dade36c4226a4d9278baa2befddfe,
         type: 3}
