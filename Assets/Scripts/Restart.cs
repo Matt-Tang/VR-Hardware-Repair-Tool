@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(Button))]
+//[RequireComponent(typeof(Button))]
 public class Restart : MonoBehaviour
 {
 
@@ -11,8 +11,14 @@ public class Restart : MonoBehaviour
 
     void Start()
     {
-        button = GetComponent<Button>();
-        button.onClick.AddListener(TaskOnClick);
+        //button = GetComponent<Button>();
+        //button.onClick.AddListener(TaskOnClick);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+            TaskOnClick();
     }
 
     void TaskOnClick()
