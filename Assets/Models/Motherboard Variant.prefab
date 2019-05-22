@@ -384,7 +384,12 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 601d332449e18d34aaa16a79c4cba1fd,
         type: 3}
       propertyPath: m_Name
-      value: Motherboard
+      value: Motherboard Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 601d332449e18d34aaa16a79c4cba1fd,
+        type: 3}
+      propertyPath: m_TagString
+      value: projectile
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 601d332449e18d34aaa16a79c4cba1fd,
         type: 3}
@@ -497,36 +502,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExplosionMatthew
       objectReference: {fileID: 0}
-    - target: {fileID: 7767715003011670277, guid: 24e232c55036d0241b19a14442951660,
-        type: 3}
-      propertyPath: startDelay.maxCurve.m_Curve.Array.data[0].outSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7767715003011670277, guid: 24e232c55036d0241b19a14442951660,
-        type: 3}
-      propertyPath: startDelay.maxCurve.m_Curve.Array.data[1].value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7767715003011670277, guid: 24e232c55036d0241b19a14442951660,
-        type: 3}
-      propertyPath: startDelay.maxCurve.m_Curve.Array.data[1].inSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7767715003011670277, guid: 24e232c55036d0241b19a14442951660,
-        type: 3}
-      propertyPath: startDelay.minCurve.m_Curve.Array.data[0].outSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7767715003011670277, guid: 24e232c55036d0241b19a14442951660,
-        type: 3}
-      propertyPath: startDelay.minCurve.m_Curve.Array.data[1].value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7767715003011670277, guid: 24e232c55036d0241b19a14442951660,
-        type: 3}
-      propertyPath: startDelay.minCurve.m_Curve.Array.data[1].inSlope
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7767715003025809931, guid: 24e232c55036d0241b19a14442951660,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -580,6 +555,36 @@ PrefabInstance:
     - target: {fileID: 7767715003025809931, guid: 24e232c55036d0241b19a14442951660,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7767715003011670277, guid: 24e232c55036d0241b19a14442951660,
+        type: 3}
+      propertyPath: startDelay.maxCurve.m_Curve.Array.data[0].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7767715003011670277, guid: 24e232c55036d0241b19a14442951660,
+        type: 3}
+      propertyPath: startDelay.maxCurve.m_Curve.Array.data[1].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7767715003011670277, guid: 24e232c55036d0241b19a14442951660,
+        type: 3}
+      propertyPath: startDelay.maxCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7767715003011670277, guid: 24e232c55036d0241b19a14442951660,
+        type: 3}
+      propertyPath: startDelay.minCurve.m_Curve.Array.data[0].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7767715003011670277, guid: 24e232c55036d0241b19a14442951660,
+        type: 3}
+      propertyPath: startDelay.minCurve.m_Curve.Array.data[1].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7767715003011670277, guid: 24e232c55036d0241b19a14442951660,
+        type: 3}
+      propertyPath: startDelay.minCurve.m_Curve.Array.data[1].inSlope
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
