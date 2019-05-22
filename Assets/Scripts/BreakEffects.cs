@@ -9,6 +9,8 @@ public class BreakEffects : MonoBehaviour
     public float breakMagnitude;
     public float explosionMagnitude;
 
+    public ParticleSystem ps;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,10 +34,10 @@ public class BreakEffects : MonoBehaviour
 
             if (explode && collision.relativeVelocity.magnitude > explosionMagnitude)
             {
-                ParticleSystem ps = GetComponent<ParticleSystem>();
+                
                 if (ps != null)
                 {
-                    ps.Play(true);
+                    ps.Play();
                 }
             }
         }
