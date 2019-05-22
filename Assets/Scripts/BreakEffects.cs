@@ -5,11 +5,10 @@ using UnityEngine;
 public class BreakEffects : MonoBehaviour
 {
     AudioSource audioSource;
-    public bool explode;
-    public float breakMagnitude;
-    public float explosionMagnitude;
+    public bool triggerParticleEffect;
+    public float triggerMagnitude;
 
-    public ParticleSystem ps;
+    public ParticleSystem particleEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -25,19 +24,18 @@ public class BreakEffects : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.relativeVelocity.magnitude > breakMagnitude)
+        if (collision.relativeVelocity.magnitude > triggerMagnitude)
         {
             if (!audioSource.isPlaying) { 
                 audioSource.Play();
                 Debug.Log("Magnitude: " + collision.relativeVelocity.magnitude);
             }
 
-            if (explode && collision.relativeVelocity.magnitude > explosionMagnitude)
+            if (triggerParticleEffect)
             {
-                
-                if (ps != null)
+                if (particleEffect != null)
                 {
-                    ps.Play();
+                    particleEffect.Play();
                 }
             }
         }
