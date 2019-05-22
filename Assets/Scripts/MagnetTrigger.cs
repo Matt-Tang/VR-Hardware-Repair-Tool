@@ -32,7 +32,7 @@ namespace Chris.GR.Wtf
                 if (transform.parent.gameObject.GetComponent<FixedJoint>() != null)
                 {
                     DestroyImmediate(transform.parent.gameObject.GetComponent<FixedJoint>());
-                    BreakEffects boom = gameObject.GetComponentInParent<BreakEffects>();
+                    ObjectProperties boom = gameObject.GetComponentInParent<ObjectProperties>();
                     if (boom != null) boom.enabled = true;
                     else { Debug.Log("No boom"); }
                     contact = null;
@@ -54,7 +54,7 @@ namespace Chris.GR.Wtf
                     transform.parent.rotation = Quaternion.Euler(contact.transform.rotation.eulerAngles);
                     transform.parent.gameObject.AddComponent<FixedJoint>();
                     GetComponentInParent<FixedJoint>().connectedBody = contact.GetComponentInParent<Rigidbody>();
-                    BreakEffects boom = gameObject.GetComponentInParent<BreakEffects>();
+                    ObjectProperties boom = gameObject.GetComponentInParent<ObjectProperties>();
                     if (boom != null)
                     {
                         boom.enabled = false;
