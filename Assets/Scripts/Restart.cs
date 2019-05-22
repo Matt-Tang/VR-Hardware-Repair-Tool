@@ -24,7 +24,7 @@ public class Restart : MonoBehaviour
     void TaskOnClick()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); // loads current scene
-
+  
     }
 }
 

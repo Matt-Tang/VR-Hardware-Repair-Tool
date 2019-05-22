@@ -223,7 +223,7 @@ MonoBehaviour:
   triggerParticleEffect: 0
   triggerMagnitude: 22
   friendlyName: Hammer
-  description: A hammer. Can be used to break things.
+  description: When all you have is a hammer, everything is a nail.
   particleEffect: {fileID: 0}
 --- !u!65 &1199879580
 BoxCollider:
