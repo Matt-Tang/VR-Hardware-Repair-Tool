@@ -8,6 +8,8 @@ namespace Chris.GR.Wtf
     public class MagnetTrigger : MonoBehaviour
     {
         GameObject contact;
+        public ParticleSystem smokeSystem;
+        public ParticleSystem explosionsSystem;
         bool wasHeld = false;
 
         // Start is called before the first frame update
@@ -58,15 +60,8 @@ namespace Chris.GR.Wtf
                     else
                     {
                         GameObject.Find("Crash").GetComponent<AudioSource>().Play();
-                        ParticleSystem explosion = GameObject.Find("ExplosionMatthew").GetComponent<ParticleSystem>();
-                        var emission = explosion.emission;
-                        emission.enabled = true;
-                        explosion.Play();
-
-                        ParticleSystem smoke = GameObject.Find("SmokeMatthew").GetComponent<ParticleSystem>();
-                        emission = smoke.emission;
-                        emission.enabled = true;
-                        smoke.Play();
+                        explosionsSystem.Play(true);
+                        smokeSystem.Play(true);
                     }
                 }
             }
