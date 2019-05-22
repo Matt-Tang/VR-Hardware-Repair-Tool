@@ -19,19 +19,44 @@ namespace Chris.GR.Wtf
         // Update is called once per frame
         void Update()
         {
-            if (isHeld())
+
+        }
+
+        void FixedUpdate()
+        {
+            // If you pick the thing up, remove joint to the other thing
+            if (isHeld() && !wasHeld)
             {
-                DestroyImmediate(transform.parent.gameObject.GetComponent<FixedJoint>());
+                if (transform.parent.gameObject.GetComponent<FixedJoint>() != null)
+                {
+                    DestroyImmediate(transform.parent.gameObject.GetComponent<FixedJoint>());
+                    contact = null;
+                }
                 wasHeld = true;
             }
-
-            Debug.Log($"wasHeld: {wasHeld}; isHeld: {isHeld()}; contact: {contact};");
+            
+            // Snap to the thing if magnets are touching
             if (wasHeld && !isHeld() && contact != null)
             {
-                transform.parent.position = contact.transform.position - transform.localPosition;
-                transform.parent.rotation = Quaternion.Euler(contact.transform.rotation.eulerAngles + new Vector3(-90, 0, 0));
+                float x, y, z;
+                x = contact.transform.position.x;
+                y = contact.transform.position.y;
+                z = contact.transform.position.z;
+                // Man, everything's got a different rotation, this ain't worth it yo. Just add some "You did it" particle or somethin'
+                //transform.parent.position = contact.transform.position;
+                //transform.parent.rotation = Quaternion.Euler(contact.transform.rotation.eulerAngles + new Vector3(-90, 0, 0));
                 transform.parent.gameObject.AddComponent<FixedJoint>();
                 GetComponentInParent<FixedJoint>().connectedBody = contact.GetComponentInParent<Rigidbody>();
+
+                // Do explosion or something here (Depending on if first word of name matches magnet name [eg: "*POE* Variant" -> "*POE*Magnet"] )
+                if (contact.transform.name.Contains(transform.parent.name.Split(' ')[0]))
+                {
+                    GameObject.Find("Ding").GetComponent<AudioSource>().Play();
+                }
+                else
+                {
+                    GameObject.Find("Crash").GetComponent<AudioSource>().Play();
+                }
             }
 
             if (!isHeld() && wasHeld)
@@ -40,22 +65,17 @@ namespace Chris.GR.Wtf
             }
         }
 
-        void FixedUpdate()
-        {
-        }
-
         void OnTriggerStay(Collider c)
         {
             if (c.name.Contains("Magnet"))
             {
                 if (isHeld())
                 {
-                    Debug.Log($"Trigger Enter: {c.name}, {c.transform.position}");
                     contact = c.gameObject;
                 }
                 else
                 {
-                    //Debug.Log("Wasn't held, doesn't count!");
+                    // fart
                 }
             }
         }
@@ -66,12 +86,12 @@ namespace Chris.GR.Wtf
             {
                 if (isHeld())
                 {
-                    Debug.Log("Trigger Exit: " + c.name);
+
                     contact = null;
                 }
                 else
                 {
-                    //Debug.Log("Wasn't held, doesn't count!");
+                    // ¯\_(ツ)_/¯
                 }
             }
         }
