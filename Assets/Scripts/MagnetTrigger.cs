@@ -45,6 +45,7 @@ namespace Chris.GR.Wtf
                 // Man, everything's got a different rotation, this ain't worth it yo. Just add some "You did it" particle or somethin'
                 //transform.parent.position = contact.transform.position;
                 //transform.parent.rotation = Quaternion.Euler(contact.transform.rotation.eulerAngles + new Vector3(-90, 0, 0));
+                //transform.parent.rotation = Quaternion.Euler(contact.transform.rotation.eulerAngles + new Vector3(-90, 0, 0));
                 transform.parent.gameObject.AddComponent<FixedJoint>();
                 GetComponentInParent<FixedJoint>().connectedBody = contact.GetComponentInParent<Rigidbody>();
 
