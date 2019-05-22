@@ -204,7 +204,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: b226c15b40d1cd846a6f576c3b986317,
         type: 3}
       propertyPath: m_Name
-      value: Battery
+      value: Battery Variant
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: b226c15b40d1cd846a6f576c3b986317,
         type: 3}
