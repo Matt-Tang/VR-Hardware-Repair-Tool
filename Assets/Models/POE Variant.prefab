@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!65 &1197277271
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4159874228574342103}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.032291755, y: 0.0043979203, z: 0.008935723}
+  m_Center: {x: -0.01800887, y: -0.0018010396, z: -0.0053550135}
 --- !u!54 &1369575524
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15,7 +28,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &1369575523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,19 +125,6 @@ MonoBehaviour:
   velocityAverageFrames: 5
   angularVelocityAverageFrames: 11
   estimateOnAwake: 0
---- !u!65 &1197277271
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4159874228574342103}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.032291755, y: 0.0043979203, z: 0.008935723}
-  m_Center: {x: -0.01800887, y: -0.0018010396, z: -0.0053550135}
 --- !u!65 &1158302765
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -174,7 +174,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 765dade36c4226a4d9278baa2befddfe,
         type: 3}
       propertyPath: m_Name
-      value: POE
+      value: POE Variant
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 765dade36c4226a4d9278baa2befddfe,
         type: 3}
