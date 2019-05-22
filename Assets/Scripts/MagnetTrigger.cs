@@ -34,29 +34,40 @@ namespace Chris.GR.Wtf
                 }
                 wasHeld = true;
             }
-            
+
             // Snap to the thing if magnets are touching
             if (wasHeld && !isHeld() && contact != null)
             {
-                float x, y, z;
-                x = contact.transform.position.x;
-                y = contact.transform.position.y;
-                z = contact.transform.position.z;
-                // Man, everything's got a different rotation, this ain't worth it yo. Just add some "You did it" particle or somethin'
-                //transform.parent.position = contact.transform.position;
-                //transform.parent.rotation = Quaternion.Euler(contact.transform.rotation.eulerAngles + new Vector3(-90, 0, 0));
-                //transform.parent.rotation = Quaternion.Euler(contact.transform.rotation.eulerAngles + new Vector3(-90, 0, 0));
-                transform.parent.gameObject.AddComponent<FixedJoint>();
-                GetComponentInParent<FixedJoint>().connectedBody = contact.GetComponentInParent<Rigidbody>();
-
-                // Do explosion or something here (Depending on if first word of name matches magnet name [eg: "*POE* Variant" -> "*POE*Magnet"] )
-                if (contact.transform.name.Contains(transform.parent.name.Split(' ')[0]))
+                float angle = Quaternion.Angle(transform.parent.rotation, contact.transform.rotation);
+                if (angle > 15f)
                 {
-                    GameObject.Find("Ding").GetComponent<AudioSource>().Play();
+                    //GameObject.Find("Nope").GetComponent<AudioSource>().Play();
+                    Debug.Log("Angle too high! " + angle);
                 }
                 else
                 {
-                    GameObject.Find("Crash").GetComponent<AudioSource>().Play();
+                    transform.parent.rotation = Quaternion.Euler(contact.transform.rotation.eulerAngles);
+                    transform.parent.gameObject.AddComponent<FixedJoint>();
+                    GetComponentInParent<FixedJoint>().connectedBody = contact.GetComponentInParent<Rigidbody>();
+
+                    // Do explosion or something here (Depending on if first word of name matches magnet name [eg: "*POE* Variant" -> "*POE*Magnet"] )
+                    if (contact.transform.name.Contains(transform.parent.name.Split(' ')[0]))
+                    {
+                        GameObject.Find("Ding").GetComponent<AudioSource>().Play();
+                    }
+                    else
+                    {
+                        GameObject.Find("Crash").GetComponent<AudioSource>().Play();
+                        ParticleSystem explosion = GameObject.Find("ExplosionMatthew").GetComponent<ParticleSystem>();
+                        var emission = explosion.emission;
+                        emission.enabled = true;
+                        explosion.Play();
+
+                        ParticleSystem smoke = GameObject.Find("SmokeMatthew").GetComponent<ParticleSystem>();
+                        emission = smoke.emission;
+                        emission.enabled = true;
+                        smoke.Play();
+                    }
                 }
             }
 
@@ -92,7 +103,7 @@ namespace Chris.GR.Wtf
                 }
                 else
                 {
-                    // ¯\_(ツ)_/¯
+                    // ¯\_(?)_/¯
                 }
             }
         }
