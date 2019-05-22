@@ -199,7 +199,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 81dbe5c0312833d44bb33e1157d777a4,
         type: 3}
       propertyPath: m_Name
-      value: Barcode
+      value: Barcode Variant
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 81dbe5c0312833d44bb33e1157d777a4,
         type: 3}
@@ -296,7 +296,7 @@ PrefabInstance:
     - target: {fileID: 2317845590675503844, guid: 4dc4dd7e2175d43428fd308884fee538,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0094
+      value: 0.1083
       objectReference: {fileID: 0}
     - target: {fileID: 2317845590675503844, guid: 4dc4dd7e2175d43428fd308884fee538,
         type: 3}

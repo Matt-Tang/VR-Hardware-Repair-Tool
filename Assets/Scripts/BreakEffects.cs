@@ -24,6 +24,7 @@ public class BreakEffects : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        if (!enabled) return;
         if (collision.relativeVelocity.magnitude > triggerMagnitude)
         {
             if (!audioSource.isPlaying) { 

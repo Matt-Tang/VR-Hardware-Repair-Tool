@@ -32,6 +32,9 @@ namespace Chris.GR.Wtf
                 if (transform.parent.gameObject.GetComponent<FixedJoint>() != null)
                 {
                     DestroyImmediate(transform.parent.gameObject.GetComponent<FixedJoint>());
+                    BreakEffects boom = gameObject.GetComponentInParent<BreakEffects>();
+                    if (boom != null) boom.enabled = true;
+                    else { Debug.Log("No boom"); }
                     contact = null;
                 }
                 wasHeld = true;
@@ -51,6 +54,12 @@ namespace Chris.GR.Wtf
                     transform.parent.rotation = Quaternion.Euler(contact.transform.rotation.eulerAngles);
                     transform.parent.gameObject.AddComponent<FixedJoint>();
                     GetComponentInParent<FixedJoint>().connectedBody = contact.GetComponentInParent<Rigidbody>();
+                    BreakEffects boom = gameObject.GetComponentInParent<BreakEffects>();
+                    if (boom != null)
+                    {
+                        boom.enabled = false;
+                    }
+                    else { Debug.Log("No boom"); }
 
                     // Do explosion or something here (Depending on if first word of name matches magnet name [eg: "*POE* Variant" -> "*POE*Magnet"] )
                     if (contact.transform.name.Contains(transform.parent.name.Split(' ')[0]))
