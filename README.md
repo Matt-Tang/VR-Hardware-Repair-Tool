@@ -7,4 +7,4 @@ seems like a bit of a joke, but it's actually a tool that could really help the 
 where you're free to experiment can not only speed up the learning process, save time and money, and also be significantly 
 more entertaining.
 
-![Demo Picture](https://github.com/Matt-Tang/VR-Hardware-Repair-Tool/blob/master/demo.PNG)
+https://www.youtube.com/watch?v=Fv-SAuokge8
